@@ -1,0 +1,65 @@
+localMessenger.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/project.pbxproj
+Pods/Pods.xcodeproj/xcuserdata/imac.xcuserdatad/xcschemes/Pods-localMessenger.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/imac.xcuserdatad/xcschemes/R.swift.Library.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/imac.xcuserdatad/xcschemes/R.swift.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/imac.xcuserdatad/xcschemes/SwiftLint.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/imac.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/R.swift/License
+Pods/R.swift/rswift
+Pods/R.swift.Library/License
+Pods/R.swift.Library/Readme.md
+Pods/R.swift.Library/Library/Core/ColorResource.swift
+Pods/R.swift.Library/Library/Core/FileResource.swift
+Pods/R.swift.Library/Library/Core/FontResource.swift
+Pods/R.swift.Library/Library/Core/Identifier.swift
+Pods/R.swift.Library/Library/Core/ImageResource.swift
+Pods/R.swift.Library/Library/Core/NibResource.swift
+Pods/R.swift.Library/Library/Core/ReuseIdentifierProtocol.swift
+Pods/R.swift.Library/Library/Core/StoryboardResource.swift
+Pods/R.swift.Library/Library/Core/StoryboardSegueIdentifierProtocol.swift
+Pods/R.swift.Library/Library/Core/StoryboardViewControllerResource.swift
+Pods/R.swift.Library/Library/Core/StringResource.swift
+Pods/R.swift.Library/Library/Core/Validatable.swift
+Pods/R.swift.Library/Library/Foundation/Bundle+FileResource.swift
+Pods/R.swift.Library/Library/Foundation/Data+FileResource.swift
+Pods/R.swift.Library/Library/UIKit/NibResource+UIKit.swift
+Pods/R.swift.Library/Library/UIKit/StoryboardResourceWithInitialController+UIKit.swift
+Pods/R.swift.Library/Library/UIKit/TypedStoryboardSegueInfo+UIStoryboardSegue.swift
+Pods/R.swift.Library/Library/UIKit/UICollectionView+ReuseIdentifierProtocol.swift
+Pods/R.swift.Library/Library/UIKit/UIColor+ColorResource.swift
+Pods/R.swift.Library/Library/UIKit/UIFont+FontResource.swift
+Pods/R.swift.Library/Library/UIKit/UIImage+ImageResource.swift
+Pods/R.swift.Library/Library/UIKit/UINib+NibResource.swift
+Pods/R.swift.Library/Library/UIKit/UIStoryboard+StoryboardResource.swift
+Pods/R.swift.Library/Library/UIKit/UIStoryboard+StoryboardViewControllerResource.swift
+Pods/R.swift.Library/Library/UIKit/UITableView+ReuseIdentifierProtocol.swift
+Pods/R.swift.Library/Library/UIKit/UIViewController+NibResource.swift
+Pods/R.swift.Library/Library/UIKit/UIViewController+StoryboardSegueIdentifierProtocol.swift
+Pods/SwiftLint/LICENSE
+Pods/SwiftLint/swiftlint
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-acknowledgements.markdown
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-acknowledgements.plist
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-dummy.m
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-frameworks-Debug-input-files.xcfilelist
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-frameworks-Debug-output-files.xcfilelist
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-frameworks-Release-input-files.xcfilelist
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-frameworks-Release-output-files.xcfilelist
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-frameworks.sh
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-Info.plist
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger-umbrella.h
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger.debug.xcconfig
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger.modulemap
+Pods/Target Support Files/Pods-localMessenger/Pods-localMessenger.release.xcconfig
+Pods/Target Support Files/R.swift/R.swift.debug.xcconfig
+Pods/Target Support Files/R.swift/R.swift.release.xcconfig
+Pods/Target Support Files/R.swift.Library/R.swift.Library-dummy.m
+Pods/Target Support Files/R.swift.Library/R.swift.Library-Info.plist
+Pods/Target Support Files/R.swift.Library/R.swift.Library-prefix.pch
+Pods/Target Support Files/R.swift.Library/R.swift.Library-umbrella.h
+Pods/Target Support Files/R.swift.Library/R.swift.Library.debug.xcconfig
+Pods/Target Support Files/R.swift.Library/R.swift.Library.modulemap
+Pods/Target Support Files/R.swift.Library/R.swift.Library.release.xcconfig
+Pods/Target Support Files/SwiftLint/SwiftLint.debug.xcconfig
+Pods/Target Support Files/SwiftLint/SwiftLint.release.xcconfig
