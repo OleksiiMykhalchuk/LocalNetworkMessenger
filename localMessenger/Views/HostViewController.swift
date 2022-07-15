@@ -32,18 +32,21 @@ class HostViewController: UIViewController {
         }
         tableView.register(UINib(resource: R.nib.userMessageCell), forCellReuseIdentifier: "userMessage")
         tableView.register(UINib(resource: R.nib.participantMessageCell), forCellReuseIdentifier: "participantMessage")
+        // Notification Observers
         NotificationCenter.default.addObserver(self, selector: #selector(peersNotification),
-                                               name: NSNotification.Name("peers"), object: nil)
+                                               name: NSNotification.Name(
+                                                NotificationName.peerConnected.rawValue), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(messageReceived),
-                                               name: Notification.Name("messageReceived"), object: nil)
+                                               name: Notification.Name(
+                                                NotificationName.messageReceived.rawValue), object: nil)
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(sendMessage),
-                                               name: Notification.Name("sendMessage"), object: nil)
+            name: Notification.Name(NotificationName.sendMessage.rawValue), object: nil)
 
         for peer in chatManager.peers {
             name += peer.displayName

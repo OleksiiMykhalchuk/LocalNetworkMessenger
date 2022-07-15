@@ -69,7 +69,7 @@ class ChatManager: NSObject {
     func send(_ message: String) {
         let chatMessage = ChatMessage(displayName: myPeerID.displayName, body: message)
         messages.insert(chatMessage, at: 0)
-        NotificationCenter.default.post(name: Notification.Name("sendMessage"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(NotificationName.sendMessage.rawValue), object: nil)
         guard let session = session,
         let data = message.data(using: .utf8),
         !session.connectedPeers.isEmpty else {
@@ -97,7 +97,8 @@ extension ChatManager: MCSessionDelegate {
         let chatMessage = ChatMessage(displayName: peerID.displayName, body: message)
         DispatchQueue.main.async {
             self.messages.insert(chatMessage, at: 0)
-            NotificationCenter.default.post(name: Notification.Name("messageReceived"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name(
+                NotificationName.messageReceived.rawValue), object: nil)
         }
     }
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -106,7 +107,8 @@ extension ChatManager: MCSessionDelegate {
             DispatchQueue.main.async {
                 if let index = self.peers.firstIndex(of: peerID) {
                     self.peers.remove(at: index)
-                    NotificationCenter.default.post(name: NSNotification.Name("peers"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name(
+                        NotificationName.peerConnected.rawValue), object: nil)
                 }
                 if self.peers.isEmpty && !self.isHosting {
                     self.connetedToChat = false
@@ -119,7 +121,8 @@ extension ChatManager: MCSessionDelegate {
                 DispatchQueue.main.async {
                     self.peers.insert(peerID, at: 0)
                     print("****Inserted")
-                    NotificationCenter.default.post(name: NSNotification.Name("peers"), object: nil)
+                    NotificationCenter.default.post(name: NSNotification.Name(
+                        NotificationName.peerConnected.rawValue), object: nil)
                 }
                 if isHosting {
                     sendHistory(to: peerID)
