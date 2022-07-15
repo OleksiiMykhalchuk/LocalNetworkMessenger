@@ -109,12 +109,9 @@
 		88311289287EAD630028D624 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8838558028817BF200F179A4 /* Cells */,
 				881853A4287861E4004006F5 /* ViewController.swift */,
 				88311290287EC45E0028D624 /* HostViewController.swift */,
-				88131DFA28815EDC00B32A2E /* UserMessageCell.xib */,
-				88131DFC28815F1B00B32A2E /* ParticipantMessageCell.xib */,
-				88131DFE28815F3700B32A2E /* UserTableViewCell.swift */,
-				88131E0028815F4F00B32A2E /* ParticipantTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -133,6 +130,17 @@
 				8831128E287EAE7F0028D624 /* ChatMessage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8838558028817BF200F179A4 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				88131DFA28815EDC00B32A2E /* UserMessageCell.xib */,
+				88131DFC28815F1B00B32A2E /* ParticipantMessageCell.xib */,
+				88131DFE28815F3700B32A2E /* UserTableViewCell.swift */,
+				88131E0028815F4F00B32A2E /* ParticipantTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D4664408E3CE9441CC0AB77E /* Frameworks */ = {

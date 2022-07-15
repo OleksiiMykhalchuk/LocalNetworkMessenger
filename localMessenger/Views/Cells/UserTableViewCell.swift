@@ -8,11 +8,9 @@
 import UIKit
 
 class UserTableViewCell: UITableViewCell {
-
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var timeName: UILabel!
     @IBOutlet weak var viewMessage: UIView!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
