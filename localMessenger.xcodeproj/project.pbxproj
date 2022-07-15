@@ -44,6 +44,7 @@
 		8831128B287EAD860028D624 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
 		8831128E287EAE7F0028D624 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		88311290287EC45E0028D624 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		8838557F2881795E00F179A4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C18D5DCA33737E715018DF38 /* Pods-localMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-localMessenger.release.xcconfig"; path = "Target Support Files/Pods-localMessenger/Pods-localMessenger.release.xcconfig"; sourceTree = "<group>"; };
 		E3B36E646AB10F30D3E70176 /* Pods_localMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_localMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,6 +72,7 @@
 		88185394287861E4004006F5 = {
 			isa = PBXGroup;
 			children = (
+				8838557F2881795E00F179A4 /* README.md */,
 				881853B6287863DA004006F5 /* R.generated.swift */,
 				8818539F287861E4004006F5 /* localMessenger */,
 				8818539E287861E4004006F5 /* Products */,
