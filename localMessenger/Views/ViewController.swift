@@ -20,16 +20,6 @@ class ViewController: UIViewController, NetServiceBrowserDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        chatManager.delegate = self
-        // Do any additional setup after loading the view.
-//        let service = NetService(domain: "",
-//                                 type: "_superapp._tcp",
-//                                 name: UIDevice.current.name,
-//                                 port: 52177)
-//        service.publish()
-//        let serviceBrowser = NetServiceBrowser()
-//        serviceBrowser.delegate = self
-//        serviceBrowser.searchForServices(ofType: "_superapp._tcp", inDomain: "")
         hostBtn.layer.borderWidth = 1
         hostBtn.layer.cornerRadius = 10
         joinBtn.layer.borderWidth = 1
@@ -37,12 +27,8 @@ class ViewController: UIViewController, NetServiceBrowserDelegate {
     }
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "host" {
+    if segue.identifier == "join" {
             let controller = segue.destination as? HostViewController
-//            controller?.chatManager = chatManager
-        } else if segue.identifier == "join" {
-            let controller = segue.destination as? HostViewController
-//            controller?.chatManager = chatManager
             controller?.isJoin = true
         }
     }

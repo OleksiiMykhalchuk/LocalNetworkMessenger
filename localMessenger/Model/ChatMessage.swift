@@ -8,10 +8,10 @@
 import UIKit
 
 struct ChatMessage: Identifiable, Codable, Equatable {
-    var id = UUID()
+    let id: UUID
     let displayName: String
     let body: String
-    var time = Date()
+    let time: Date
     var isUser: Bool {
         return displayName == UIDevice.current.name
     }

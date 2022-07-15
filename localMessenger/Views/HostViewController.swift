@@ -105,7 +105,6 @@ class HostViewController: UIViewController {
         tableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20).isActive = true
         tableView.bottomAnchor.constraint(equalTo: textField.topAnchor, constant: -20).isActive = true
         tableView.widthAnchor.constraint(equalToConstant: view.bounds.width).isActive = true
-//        tableView.backgroundColor = .green
         tableView.dataSource = self
         tableView.delegate = self
         tableView.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
@@ -118,7 +117,6 @@ class HostViewController: UIViewController {
         textField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         constraint = textField.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60)
         constraint?.isActive = true
-//        textField.backgroundColor = .red
         textField.placeholder = "Enter Message"
         textField.layer.cornerRadius = 10
         textField.layer.borderWidth = 1

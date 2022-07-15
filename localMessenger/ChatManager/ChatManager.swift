@@ -67,7 +67,7 @@ class ChatManager: NSObject {
         advertiserAssistant = nil
     }
     func send(_ message: String) {
-        let chatMessage = ChatMessage(displayName: myPeerID.displayName, body: message)
+        let chatMessage = ChatMessage(id: UUID(), displayName: myPeerID.displayName, body: message, time: Date())
         messages.insert(chatMessage, at: 0)
         NotificationCenter.default.post(name: Notification.Name(NotificationName.sendMessage.rawValue), object: nil)
         guard let session = session,
@@ -94,7 +94,7 @@ extension ChatManager: MCNearbyServiceAdvertiserDelegate {
 extension ChatManager: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         guard let message = String(data: data, encoding: .utf8) else { return }
-        let chatMessage = ChatMessage(displayName: peerID.displayName, body: message)
+        let chatMessage = ChatMessage(id: UUID(), displayName: peerID.displayName, body: message, time: Date())
         DispatchQueue.main.async {
             self.messages.insert(chatMessage, at: 0)
             NotificationCenter.default.post(name: Notification.Name(
@@ -120,7 +120,6 @@ extension ChatManager: MCSessionDelegate {
             if  !peers.contains(peerID) {
                 DispatchQueue.main.async {
                     self.peers.insert(peerID, at: 0)
-                    print("****Inserted")
                     NotificationCenter.default.post(name: NSNotification.Name(
                         NotificationName.peerConnected.rawValue), object: nil)
                 }
