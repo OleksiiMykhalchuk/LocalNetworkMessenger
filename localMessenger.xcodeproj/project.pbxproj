@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		14D9676000480F175DD438A2 /* Pods_localMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B36E646AB10F30D3E70176 /* Pods_localMessenger.framework */; };
+		88131DFB28815EDC00B32A2E /* UserMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88131DFA28815EDC00B32A2E /* UserMessageCell.xib */; };
+		88131DFD28815F1B00B32A2E /* ParticipantMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88131DFC28815F1B00B32A2E /* ParticipantMessageCell.xib */; };
+		88131DFF28815F3700B32A2E /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131DFE28815F3700B32A2E /* UserTableViewCell.swift */; };
+		88131E0128815F4F00B32A2E /* ParticipantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131E0028815F4F00B32A2E /* ParticipantTableViewCell.swift */; };
+		88131E04288165F700B32A2E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88131E03288165F700B32A2E /* DateFormatter.swift */; };
 		881853A1287861E4004006F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881853A0287861E4004006F5 /* AppDelegate.swift */; };
 		881853A3287861E4004006F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881853A2287861E4004006F5 /* SceneDelegate.swift */; };
 		881853A5287861E4004006F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881853A4287861E4004006F5 /* ViewController.swift */; };
@@ -15,10 +20,18 @@
 		881853AA287861E6004006F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 881853A9287861E6004006F5 /* Assets.xcassets */; };
 		881853AD287861E6004006F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881853AB287861E6004006F5 /* LaunchScreen.storyboard */; };
 		881853B7287863DA004006F5 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881853B6287863DA004006F5 /* R.generated.swift */; };
+		8831128C287EAD860028D624 /* ChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831128B287EAD860028D624 /* ChatManager.swift */; };
+		8831128F287EAE7F0028D624 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831128E287EAE7F0028D624 /* ChatMessage.swift */; };
+		88311291287EC45E0028D624 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88311290287EC45E0028D624 /* HostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2E2A256AC12DD885A9E6B250 /* Pods-localMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-localMessenger.debug.xcconfig"; path = "Target Support Files/Pods-localMessenger/Pods-localMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		88131DFA28815EDC00B32A2E /* UserMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserMessageCell.xib; sourceTree = "<group>"; };
+		88131DFC28815F1B00B32A2E /* ParticipantMessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParticipantMessageCell.xib; sourceTree = "<group>"; };
+		88131DFE28815F3700B32A2E /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		88131E0028815F4F00B32A2E /* ParticipantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewCell.swift; sourceTree = "<group>"; };
+		88131E03288165F700B32A2E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		8818539D287861E4004006F5 /* localMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = localMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		881853A0287861E4004006F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		881853A2287861E4004006F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +41,9 @@
 		881853AC287861E6004006F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		881853AE287861E6004006F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		881853B6287863DA004006F5 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		8831128B287EAD860028D624 /* ChatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatManager.swift; sourceTree = "<group>"; };
+		8831128E287EAE7F0028D624 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		88311290287EC45E0028D624 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		C18D5DCA33737E715018DF38 /* Pods-localMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-localMessenger.release.xcconfig"; path = "Target Support Files/Pods-localMessenger/Pods-localMessenger.release.xcconfig"; sourceTree = "<group>"; };
 		E3B36E646AB10F30D3E70176 /* Pods_localMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_localMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -44,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		88131E02288165DC00B32A2E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				88131E03288165F700B32A2E /* DateFormatter.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		88185394287861E4004006F5 = {
 			isa = PBXGroup;
 			children = (
@@ -66,15 +90,47 @@
 		8818539F287861E4004006F5 /* localMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				88131E02288165DC00B32A2E /* Extension */,
+				8831128D287EAE6C0028D624 /* Model */,
+				8831128A287EAD730028D624 /* ChatManager */,
+				88311289287EAD630028D624 /* Views */,
 				881853A0287861E4004006F5 /* AppDelegate.swift */,
 				881853A2287861E4004006F5 /* SceneDelegate.swift */,
-				881853A4287861E4004006F5 /* ViewController.swift */,
 				881853A6287861E4004006F5 /* Main.storyboard */,
 				881853A9287861E6004006F5 /* Assets.xcassets */,
 				881853AB287861E6004006F5 /* LaunchScreen.storyboard */,
 				881853AE287861E6004006F5 /* Info.plist */,
 			);
 			path = localMessenger;
+			sourceTree = "<group>";
+		};
+		88311289287EAD630028D624 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				881853A4287861E4004006F5 /* ViewController.swift */,
+				88311290287EC45E0028D624 /* HostViewController.swift */,
+				88131DFA28815EDC00B32A2E /* UserMessageCell.xib */,
+				88131DFC28815F1B00B32A2E /* ParticipantMessageCell.xib */,
+				88131DFE28815F3700B32A2E /* UserTableViewCell.swift */,
+				88131E0028815F4F00B32A2E /* ParticipantTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8831128A287EAD730028D624 /* ChatManager */ = {
+			isa = PBXGroup;
+			children = (
+				8831128B287EAD860028D624 /* ChatManager.swift */,
+			);
+			path = ChatManager;
+			sourceTree = "<group>";
+		};
+		8831128D287EAE6C0028D624 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8831128E287EAE7F0028D624 /* ChatMessage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D4664408E3CE9441CC0AB77E /* Frameworks */ = {
@@ -157,7 +213,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				881853AD287861E6004006F5 /* LaunchScreen.storyboard in Resources */,
+				88131DFB28815EDC00B32A2E /* UserMessageCell.xib in Resources */,
 				881853AA287861E6004006F5 /* Assets.xcassets in Resources */,
+				88131DFD28815F1B00B32A2E /* ParticipantMessageCell.xib in Resources */,
 				881853A8287861E4004006F5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,6 +261,7 @@
 		};
 		881853B528786357004006F5 /* RSwift */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -249,10 +308,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88131DFF28815F3700B32A2E /* UserTableViewCell.swift in Sources */,
 				881853A5287861E4004006F5 /* ViewController.swift in Sources */,
+				8831128C287EAD860028D624 /* ChatManager.swift in Sources */,
+				88131E04288165F700B32A2E /* DateFormatter.swift in Sources */,
 				881853A1287861E4004006F5 /* AppDelegate.swift in Sources */,
 				881853A3287861E4004006F5 /* SceneDelegate.swift in Sources */,
 				881853B7287863DA004006F5 /* R.generated.swift in Sources */,
+				8831128F287EAE7F0028D624 /* ChatMessage.swift in Sources */,
+				88311291287EC45E0028D624 /* HostViewController.swift in Sources */,
+				88131E0128815F4F00B32A2E /* ParticipantTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -382,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -403,6 +468,7 @@
 				DEVELOPMENT_TEAM = 48ZGK5S53A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = localMessenger/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Why do we use local network???";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -432,6 +498,7 @@
 				DEVELOPMENT_TEAM = 48ZGK5S53A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = localMessenger/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Why do we use local network???";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

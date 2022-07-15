@@ -89,6 +89,41 @@ struct R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  struct segue {
+    /// This struct is generated for `ViewController`, and contains static references to 2 segues.
+    struct viewController {
+      /// Segue identifier `host`.
+      static let host: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ViewController, HostViewController> = Rswift.StoryboardSegueIdentifier(identifier: "host")
+      /// Segue identifier `join`.
+      static let join: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ViewController, HostViewController> = Rswift.StoryboardSegueIdentifier(identifier: "join")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `host`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func host(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ViewController, HostViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.viewController.host, segue: segue)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `join`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func join(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ViewController, HostViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.viewController.join, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
@@ -139,6 +174,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.image` struct is generated, and contains static references to 2 images.
+  struct image {
+    /// Image `Received Message`.
+    static let receivedMessage = Rswift.ImageResource(bundle: R.hostingBundle, name: "Received Message")
+    /// Image `Sent Message`.
+    static let sentMessage = Rswift.ImageResource(bundle: R.hostingBundle, name: "Sent Message")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Received Message", bundle: ..., traitCollection: ...)`
+    static func receivedMessage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.receivedMessage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIImage(named: "Sent Message", bundle: ..., traitCollection: ...)`
+    static func sentMessage(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.sentMessage, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
   /// This `R.info` struct is generated, and contains static references to 1 properties.
   struct info {
     struct uiApplicationSceneManifest {
@@ -170,6 +229,50 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  struct nib {
+    /// Nib `ParticipantMessageCell`.
+    static let participantMessageCell = _R.nib._ParticipantMessageCell()
+    /// Nib `UserMessageCell`.
+    static let userMessageCell = _R.nib._UserMessageCell()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ParticipantMessageCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.participantMessageCell) instead")
+    static func participantMessageCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.participantMessageCell)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "UserMessageCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.userMessageCell) instead")
+    static func userMessageCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.userMessageCell)
+    }
+    #endif
+
+    static func participantMessageCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ParticipantTableViewCell? {
+      return R.nib.participantMessageCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ParticipantTableViewCell
+    }
+
+    static func userMessageCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UserTableViewCell? {
+      return R.nib.userMessageCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UserTableViewCell
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `participantMessage`.
+    static let participantMessage: Rswift.ReuseIdentifier<ParticipantTableViewCell> = Rswift.ReuseIdentifier(identifier: "participantMessage")
+    /// Reuse identifier `userMessage`.
+    static let userMessage: Rswift.ReuseIdentifier<UserTableViewCell> = Rswift.ReuseIdentifier(identifier: "userMessage")
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
@@ -186,9 +289,63 @@ struct R: Rswift.Validatable {
 struct _R: Rswift.Validatable {
   static func validate() throws {
     #if os(iOS) || os(tvOS)
+    try nib.validate()
+    #endif
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
     #endif
   }
+
+  #if os(iOS) || os(tvOS)
+  struct nib: Rswift.Validatable {
+    static func validate() throws {
+      try _ParticipantMessageCell.validate()
+      try _UserMessageCell.validate()
+    }
+
+    struct _ParticipantMessageCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = ParticipantTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "participantMessage"
+      let name = "ParticipantMessageCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ParticipantTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ParticipantTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Sent Message", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Sent Message' is used in nib 'ParticipantMessageCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    struct _UserMessageCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = UserTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "userMessage"
+      let name = "UserMessageCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UserTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UserTableViewCell
+      }
+
+      static func validate() throws {
+        if UIKit.UIImage(named: "Received Message", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Received Message' is used in nib 'UserMessageCell', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
 
   #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
@@ -219,14 +376,26 @@ struct _R: Rswift.Validatable {
 
     #if os(iOS) || os(tvOS)
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
+      let hostViewController = StoryboardViewControllerResource<HostViewController>(identifier: "HostViewController")
       let name = "Main"
+      let root = StoryboardViewControllerResource<ViewController>(identifier: "root")
+
+      func hostViewController(_: Void = ()) -> HostViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: hostViewController)
+      }
+
+      func root(_: Void = ()) -> ViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: root)
+      }
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
         }
+        if _R.storyboard.main().hostViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'hostViewController' could not be loaded from storyboard 'Main' as 'HostViewController'.") }
+        if _R.storyboard.main().root() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'root' could not be loaded from storyboard 'Main' as 'ViewController'.") }
       }
 
       fileprivate init() {}

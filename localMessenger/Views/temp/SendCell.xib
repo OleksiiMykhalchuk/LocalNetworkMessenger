@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="send" id="Mlb-IP-Gtg" customClass="SendCollectionViewCell" customModule="localMessenger" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="152" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2qf-L5-49K">
+                <rect key="frame" x="0.0" y="0.0" width="152" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Received Message" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-eX-Kjj">
+                        <rect key="frame" x="0.0" y="0.0" width="152" height="50"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9T-t8-fzY">
+                        <rect key="frame" x="61.5" y="4.5" width="29" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRb-49-GYm">
+                        <rect key="frame" x="35.5" y="24.5" width="81" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="x9T-t8-fzY" firstAttribute="centerY" secondItem="2qf-L5-49K" secondAttribute="centerY" constant="-10" id="60H-kp-xr8"/>
+                    <constraint firstAttribute="trailing" secondItem="3lr-eX-Kjj" secondAttribute="trailing" id="C9i-sj-eWn"/>
+                    <constraint firstItem="lRb-49-GYm" firstAttribute="centerX" secondItem="2qf-L5-49K" secondAttribute="centerX" id="XTb-OL-CWg"/>
+                    <constraint firstItem="x9T-t8-fzY" firstAttribute="centerX" secondItem="2qf-L5-49K" secondAttribute="centerX" id="aTL-bN-zso"/>
+                    <constraint firstItem="3lr-eX-Kjj" firstAttribute="top" secondItem="2qf-L5-49K" secondAttribute="top" id="ftT-NO-zRS"/>
+                    <constraint firstItem="3lr-eX-Kjj" firstAttribute="leading" secondItem="2qf-L5-49K" secondAttribute="leading" id="hoE-0n-8Aw"/>
+                    <constraint firstAttribute="bottom" secondItem="3lr-eX-Kjj" secondAttribute="bottom" id="sFw-dV-3gO"/>
+                    <constraint firstItem="lRb-49-GYm" firstAttribute="centerY" secondItem="2qf-L5-49K" secondAttribute="centerY" constant="10" id="w1w-Zq-F1V"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="152" height="50"/>
+            <connections>
+                <outlet property="text" destination="x9T-t8-fzY" id="mfI-ue-H9o"/>
+                <outlet property="timestamp" destination="lRb-49-GYm" id="bYG-KN-shD"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="184.82142857142856"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Received Message" width="39" height="34"/>
+    </resources>
+</document>
