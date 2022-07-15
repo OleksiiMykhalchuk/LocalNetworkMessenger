@@ -9,11 +9,12 @@ import UIKit
 import MultipeerConnectivity
 
 class HostViewController: UIViewController {
-    var chatManager = ChatManager.shared
-    var peers: [String] = []
     var isJoin: Bool?
+    private var chatManager = ChatManager.shared
+    private var peers: [String] = []
     private var name = ""
     private var constraint: NSLayoutConstraint?
+    // MARK: - Outlets
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textField: UITextField!
@@ -26,10 +27,12 @@ class HostViewController: UIViewController {
 
         if isJoin != nil {
             title = "Join Chat"
+            name = chatManager.peers.reduce("") { $0 + $1.displayName + "\n" }
         } else {
             title = "Host Chat"
             name = "No Participants Yet"
         }
+        label.text = name
         tableView.register(UINib(resource: R.nib.userMessageCell), forCellReuseIdentifier: "userMessage")
         tableView.register(UINib(resource: R.nib.participantMessageCell), forCellReuseIdentifier: "participantMessage")
         // Notification Observers
@@ -47,34 +50,25 @@ class HostViewController: UIViewController {
             self,
             selector: #selector(sendMessage),
             name: Notification.Name(NotificationName.sendMessage.rawValue), object: nil)
-
-        for peer in chatManager.peers {
-            name += peer.displayName
-        }
-        label.text = name
-
         textFieldSetup()
         tableViewSetup()
     }
-    @objc func messageReceived() {
+    // MARK: - Selectors
+    @objc private func messageReceived() {
         print(chatManager.messages)
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .left)
     }
-    @objc func sendMessage() {
+    @objc private func sendMessage() {
         let indexPath = IndexPath(row: 0, section: 0)
         tableView.insertRows(at: [indexPath], with: .right)
     }
-    @objc func peersNotification(_ sender: Any) {
-        print("Peers \(chatManager.peers)")
+    @objc private func peersNotification(_ sender: Any) {
         var name = ""
-        for peer in chatManager.peers {
-            name += peer.displayName
-        }
+        name = chatManager.peers.reduce("") { $0 + $1.displayName + "\n" }
         label.text = name
     }
-    @objc func keyboardWillShow(notification: NSNotification) {
-        print("KeyboardWillShow")
+    @objc private func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey]
@@ -88,8 +82,7 @@ class HostViewController: UIViewController {
                        delay: 0, options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
 
     }
-    @objc func keyboardWillHide(notification: NSNotification) {
-        print("KeyboardWillHide")
+    @objc private func keyboardWillHide(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
         let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey]
                                       as? NSNumber)?.doubleValue ?? 0
@@ -100,6 +93,11 @@ class HostViewController: UIViewController {
         UIView.animate(withDuration: duration, delay: 0,
                        options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
     }
+    @objc func touchUpInside() {
+        chatManager.send(textField.text!)
+        textField.text = ""
+    }
+    // MARK: - Private Functions
     private func tableViewSetup() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20).isActive = true
@@ -122,15 +120,10 @@ class HostViewController: UIViewController {
         textField.layer.borderWidth = 1
         textField.addTarget(self, action: #selector(touchUpInside), for: .editingDidEndOnExit)
     }
-    @objc func touchUpInside() {
-        print("touchUpInside")
-        chatManager.send(textField.text!)
-        textField.text = ""
-    }
 }
 
 extension HostViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let userCell = tableView.dequeueReusableCell(
             withIdentifier: "userMessage", for: indexPath) as? UserTableViewCell else {
             return UITableViewCell()
@@ -151,17 +144,17 @@ extension HostViewController: UITableViewDataSource {
             return participantCell
         }
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return chatManager.messages.count
     }
 }
 
 // MARK: - UITableViewDelegate
 extension HostViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    internal func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
 }

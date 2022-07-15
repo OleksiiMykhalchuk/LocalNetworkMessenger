@@ -24,6 +24,8 @@
 		8831128F287EAE7F0028D624 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8831128E287EAE7F0028D624 /* ChatMessage.swift */; };
 		88311291287EC45E0028D624 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88311290287EC45E0028D624 /* HostViewController.swift */; };
 		883855822881897800F179A4 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883855812881897800F179A4 /* NotificationName.swift */; };
+		883855862881A19600F179A4 /* ErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883855852881A19600F179A4 /* ErrorHandling.swift */; };
+		883855892881A57700F179A4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883855882881A57700F179A4 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		88311290287EC45E0028D624 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		8838557F2881795E00F179A4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		883855812881897800F179A4 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		883855852881A19600F179A4 /* ErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandling.swift; sourceTree = "<group>"; };
+		883855882881A57700F179A4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C18D5DCA33737E715018DF38 /* Pods-localMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-localMessenger.release.xcconfig"; path = "Target Support Files/Pods-localMessenger/Pods-localMessenger.release.xcconfig"; sourceTree = "<group>"; };
 		E3B36E646AB10F30D3E70176 /* Pods_localMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_localMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,6 +98,8 @@
 		8818539F287861E4004006F5 /* localMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				883855872881A56300F179A4 /* Alert */,
+				883855842881A17800F179A4 /* ErrorHandling */,
 				88385583288194DC00F179A4 /* NotificationName */,
 				88131E02288165DC00B32A2E /* Extension */,
 				8831128D287EAE6C0028D624 /* Model */,
@@ -152,6 +158,22 @@
 				883855812881897800F179A4 /* NotificationName.swift */,
 			);
 			path = NotificationName;
+			sourceTree = "<group>";
+		};
+		883855842881A17800F179A4 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				883855852881A19600F179A4 /* ErrorHandling.swift */,
+			);
+			path = ErrorHandling;
+			sourceTree = "<group>";
+		};
+		883855872881A56300F179A4 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				883855882881A57700F179A4 /* Alert.swift */,
+			);
+			path = Alert;
 			sourceTree = "<group>";
 		};
 		D4664408E3CE9441CC0AB77E /* Frameworks */ = {
@@ -334,10 +356,12 @@
 				881853A5287861E4004006F5 /* ViewController.swift in Sources */,
 				8831128C287EAD860028D624 /* ChatManager.swift in Sources */,
 				88131E04288165F700B32A2E /* DateFormatter.swift in Sources */,
+				883855892881A57700F179A4 /* Alert.swift in Sources */,
 				881853A1287861E4004006F5 /* AppDelegate.swift in Sources */,
 				881853A3287861E4004006F5 /* SceneDelegate.swift in Sources */,
 				881853B7287863DA004006F5 /* R.generated.swift in Sources */,
 				8831128F287EAE7F0028D624 /* ChatMessage.swift in Sources */,
+				883855862881A19600F179A4 /* ErrorHandling.swift in Sources */,
 				88311291287EC45E0028D624 /* HostViewController.swift in Sources */,
 				88131E0128815F4F00B32A2E /* ParticipantTableViewCell.swift in Sources */,
 			);

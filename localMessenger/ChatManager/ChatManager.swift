@@ -43,6 +43,8 @@ class ChatManager: NSObject {
         session?.sendResource(at: tempFile, withName: "Chat_History", toPeer: peer) { error in
             if let error = error {
                 print(error.localizedDescription)
+                var alert = Alerts(error: error)
+                alert.showAlert()
             }
         }
     }
@@ -78,7 +80,9 @@ class ChatManager: NSObject {
         do {
             try session.send(data, toPeers: session.connectedPeers, with: .reliable)
         } catch {
-            print(error.localizedDescription)
+            var alert = Alerts(error: CustomError.sendMessageFailure(error))
+            alert.showAlert()
+            print("\(CustomError.sendMessageFailure(error))")
         }
     }
 }

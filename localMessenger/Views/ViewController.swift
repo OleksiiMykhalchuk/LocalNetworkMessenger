@@ -8,8 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, NetServiceBrowserDelegate {
-    var chatManager = ChatManager.shared
-    var peers: [String] = []
+    private var chatManager = ChatManager.shared
     @IBOutlet weak var hostBtn: UIButton!
     @IBOutlet weak var joinBtn: UIButton!
     @IBAction func joinAction(_ sender: Any) {
