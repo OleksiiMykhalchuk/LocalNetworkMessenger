@@ -8,11 +8,11 @@
 import Foundation
 import MultipeerConnectivity
 
-class ChatManager: NSObject, ObservableObject {
+class ChatManager: NSObject {
     private static let service = "chat"
-    @Published var peers: [MCPeerID] = []
-    @Published var messages: [ChatMessage] = []
-    @Published var connetedToChat = false
+    var peers: [MCPeerID] = []
+    var messages: [ChatMessage] = []
+    var connetedToChat = false
 
     static var shared = ChatManager()
 
