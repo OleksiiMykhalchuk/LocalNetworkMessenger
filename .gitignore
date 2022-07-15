@@ -63,3 +63,27 @@ Pods/Target Support Files/R.swift.Library/R.swift.Library.modulemap
 Pods/Target Support Files/R.swift.Library/R.swift.Library.release.xcconfig
 Pods/Target Support Files/SwiftLint/SwiftLint.debug.xcconfig
 Pods/Target Support Files/SwiftLint/SwiftLint.release.xcconfig
+localMessenger/Bindable.swift
+localMessenger.xcworkspace/xcuserdata/imac.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+localMessenger/Bonjour/BonjourSession.swift
+localMessenger/Bonjour/Peer.swift
+localMessenger/Bonjour/ProgressWatcher.swift
+localMessenger/Bonjour/Extensions/MCPeerID+Extensions.swift
+localMessenger/Networking/GameProtocol.swift
+localMessenger/Networking/NWParameters+InitWithPasscode.swift
+localMessenger/Networking/PeerBrowser.swift
+localMessenger/Networking/PeerConnection.swift
+localMessenger/Networking/PeerListener.swift
+resources/Received Message.pdf
+resources/Sent Message.pdf
+TicTacToe-iOS/AppDelegate.swift
+TicTacToe-iOS/iOS-Info.plist
+TicTacToe-iOS/Assets.xcassets/Contents.json
+TicTacToe-iOS/Assets.xcassets/AppIcon.appiconset/Contents.json
+TicTacToe-iOS/Views/GameScene.sks
+TicTacToe-iOS/Views/GameScene.swift
+TicTacToe-iOS/Views/GameViewController.swift
+TicTacToe-iOS/Views/PasscodeViewController.swift
+TicTacToe-iOS/Views/PeerListViewController.swift
+TicTacToe-iOS/Views/Base.lproj/LaunchScreen.storyboard
+TicTacToe-iOS/Views/Base.lproj/Main.storyboard
