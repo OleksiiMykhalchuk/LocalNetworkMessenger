@@ -32,11 +32,18 @@ class HostViewController: UIViewController {
         }
         tableView.register(UINib(resource: R.nib.userMessageCell), forCellReuseIdentifier: "userMessage")
         tableView.register(UINib(resource: R.nib.participantMessageCell), forCellReuseIdentifier: "participantMessage")
-        NotificationCenter.default.addObserver(self, selector: #selector(peersNotification), name: NSNotification.Name("peers"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(messageReceived), name: Notification.Name("messageReceived"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(sendMessage), name: Notification.Name("sendMessage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(peersNotification),
+                                               name: NSNotification.Name("peers"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(messageReceived),
+                                               name: Notification.Name("messageReceived"), object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(sendMessage),
+                                               name: Notification.Name("sendMessage"), object: nil)
 
         for peer in chatManager.peers {
             name += peer.displayName
@@ -67,24 +74,28 @@ class HostViewController: UIViewController {
         print("KeyboardWillShow")
         guard let userInfo = notification.userInfo else { return }
         let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey]
+                                      as? NSNumber)?.doubleValue ?? 0
         let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
              let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
-             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+             let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(
+                rawValue: animationCurveRaw)
         constraint?.constant = -endFrame!.height
-        UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
+        UIView.animate(withDuration: duration,
+                       delay: 0, options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
 
     }
     @objc func keyboardWillHide(notification: NSNotification) {
         print("KeyboardWillHide")
         guard let userInfo = notification.userInfo else { return }
-        let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        let duration: TimeInterval = (userInfo[UIResponder.keyboardAnimationCurveUserInfoKey]
+                                      as? NSNumber)?.doubleValue ?? 0
         let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
              let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
-             let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+             let animationCurve: UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
         constraint?.constant = -60
-        UIView.animate(withDuration: duration, delay: 0, options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
+        UIView.animate(withDuration: duration, delay: 0,
+                       options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
     }
     private func tableViewSetup() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -119,10 +130,12 @@ class HostViewController: UIViewController {
 
 extension HostViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let userCell = tableView.dequeueReusableCell(withIdentifier: "userMessage", for: indexPath) as? UserTableViewCell else {
+        guard let userCell = tableView.dequeueReusableCell(
+            withIdentifier: "userMessage", for: indexPath) as? UserTableViewCell else {
             return UITableViewCell()
         }
-        guard let participantCell = tableView.dequeueReusableCell(withIdentifier: "participantMessage", for: indexPath) as? ParticipantTableViewCell else {
+        guard let participantCell = tableView.dequeueReusableCell(
+            withIdentifier: "participantMessage", for: indexPath) as? ParticipantTableViewCell else {
             return UITableViewCell()
         }
         if chatManager.messages[indexPath.row].isUser {

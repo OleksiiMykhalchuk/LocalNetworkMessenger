@@ -53,7 +53,8 @@ class ChatManager: NSObject, ObservableObject {
         connetedToChat = true
         session = MCSession(peer: myPeerID, securityIdentity: nil, encryptionPreference: .required)
         session?.delegate = self
-        advertiserAssistant = MCNearbyServiceAdvertiser(peer: myPeerID, discoveryInfo: nil, serviceType: ChatManager.service)
+        advertiserAssistant = MCNearbyServiceAdvertiser(
+            peer: myPeerID, discoveryInfo: nil, serviceType: ChatManager.service)
         advertiserAssistant?.delegate = self
         advertiserAssistant?.startAdvertisingPeer()
     }
@@ -83,7 +84,9 @@ class ChatManager: NSObject, ObservableObject {
 }
 
 extension ChatManager: MCNearbyServiceAdvertiserDelegate {
-    func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+    func advertiser(_ advertiser: MCNearbyServiceAdvertiser,
+                    didReceiveInvitationFromPeer peerID: MCPeerID,
+                    withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
         invitationHandler(true, session)
     }
 }
@@ -126,11 +129,14 @@ extension ChatManager: MCSessionDelegate {
             print("Unknow")
         }
     }
-    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {}
-    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+    func session(_ session: MCSession, didReceive stream: InputStream,
+                 withName streamName: String, fromPeer peerID: MCPeerID) {}
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String,
+                 fromPeer peerID: MCPeerID, with progress: Progress) {
         print("Receiving chat history")
     }
-    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String,
+                 fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
         guard let localURL = localURL,
         let data = try? Data(contentsOf: localURL),
         let messages = try? JSONDecoder().decode([ChatMessage].self, from: data) else {

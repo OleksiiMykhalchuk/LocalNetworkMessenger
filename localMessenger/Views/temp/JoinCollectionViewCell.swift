@@ -11,5 +11,4 @@ class JoinCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var body: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var view: UIView!
-    
 }
